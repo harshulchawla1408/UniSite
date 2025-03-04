@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function Login() {
     const [email, setEmail] = useState();
     const [pass, setPass] = useState();
+    const navigate = useNavigate();
 
     async function onLogin(e) {
         e.preventDefault();
@@ -13,6 +15,8 @@ function Login() {
             const resp = await axios.post("http://localhost:9000/api/login", logindata);
             toast.success("Login Successful");
             console.log(resp.data);
+            navigate ("/home");
+
         } catch (err) {
             toast.error("Invalid Credentials");
         }

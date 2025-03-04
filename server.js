@@ -40,11 +40,11 @@ var registerSchema = mongoose.Schema({
     usertype:String},
     {versionKey:false})
 var registerModel = mongoose.model("register",registerSchema,"register");
-
+ 
 app.post("/api/register",async(req,res)=>
 {
     var newrecord = new registerModel({
-        sname:req.body.name,
+        name:req.body.name,
         phone:req.body.phone,
         email:req.body.email,
         rollno:req.body.rollno,
