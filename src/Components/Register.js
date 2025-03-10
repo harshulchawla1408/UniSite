@@ -128,12 +128,11 @@ function Register() {
           <label>Password:</label>
           <input type="password" name="pass" onChange={(e) => setPass(e.target.value)} placeholder="Password" required="" />
         </div>
-
         <div className="form-section">
           <label>Confirm Password:</label>
           <input type="password" name="cpass" onChange={(e) => setCpass(e.target.value)} placeholder="Confirm Password" required="" />
         </div>
-        <div className="form-section form-full-width" style={{ textAlign: "left" }}>
+        <div className="" style={{ textAlign: "left" }}>
           <label>Confirmation:</label>
           <div>
           <span style={{ marginLeft: "0px" }}>

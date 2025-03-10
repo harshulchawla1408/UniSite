@@ -27,13 +27,7 @@ function App() {
         ) : (
           <Header />
         )}     
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/> 
+         
       <SiteRoutes/>
       <Footer/>   
       </userContext.Provider>
