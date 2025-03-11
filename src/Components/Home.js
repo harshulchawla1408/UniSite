@@ -122,13 +122,16 @@ function Home() {
           <div className="recruiters-scroll">
             {/* Add company logos here */}
             <div className="recruiter-logos">
-              {/* Sample logos - replace with actual company logos */}
               <img src="../images/company1.jpg" alt="Company 1" />
               <img src="../images/company2.png" alt="Company 2" />
               <img src="../images/company3.png" alt="Company 3" />
               <img src="../images/company4.png" alt="Company 4" />
               <img src="../images/company5.png" alt="Company 5" />
-              {/* Add more logos */}
+              <img src="../images/company6.jpg" alt="Company 6" />
+              <img src="../images/company7.png" alt="Company 7" />
+              <img src="../images/company8.png" alt="Company 8" />
+              <img src="../images/company9.png" alt="Company 9" />
+              <img src="../images/company10.png" alt="Company 10" />
             </div>
           </div>
         </div>
@@ -208,7 +211,7 @@ function Home() {
             <div className="contact-info">
               <div className="contact-item">
                 <i className="fas fa-envelope"></i>
-                <p>placements@university.edu</p>
+                <p>placement@pbi.ac.in</p>
               </div>
               <div className="contact-item">
                 <i className="fas fa-phone"></i>
@@ -216,7 +219,8 @@ function Home() {
               </div>
               <div className="contact-item">
                 <i className="fas fa-map-marker-alt"></i>
-                <p>Placement Cell, University Campus</p>
+                <p>Career and Counselling cum Placement Cell,<br/> Ground Floor, <br/>Engineering Block, <br/>Punjabi University, Patiala (Punjab) 147002
+                </p>
               </div>
             </div>
             <div className="contact-form">

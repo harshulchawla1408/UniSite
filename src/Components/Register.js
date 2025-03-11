@@ -4,7 +4,8 @@ import { toast } from "react-toastify";
 import './style.css';
 
 function Register() {
-  const [name, setName] = useState();
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
   const [phone, setPhone] = useState();
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
@@ -21,7 +22,7 @@ function Register() {
     e.preventDefault();
     if (terms === true) {
       if (pass === cpass) {
-        const regdata = { name, phone, email, pass, dob, gender, batch, rollno, degree };
+        const regdata = { firstname, lastname, phone, email, pass, dob, gender, batch, rollno, degree };
         try {
           const resp = await axios.post(
             "http://localhost:9000/api/register",
@@ -52,9 +53,13 @@ function Register() {
           <h3 className="section-title">Personal Details</h3>
           <div className="form-grid">
             <div className="form-section">
-              <label>Full Name</label>
-              <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Full Name" required="" />
-            </div><br/>
+              <label>First Name</label>
+              <input type="text" name="firstname" onChange={(e) => setFirstname(e.target.value)} placeholder="First Name" required="" />
+            </div>
+            <div className="form-section">
+              <label>Last Name</label>
+              <input type="text" name="lastname" onChange={(e) => setLastname(e.target.value)} placeholder="Last Name"  />
+            </div>
             <div className="form-section">
               <label>Date of Birth</label>
               <input type="date" name="dob" onChange={(e) => setDob(e.target.value)} placeholder="Date of Birth" required="" />

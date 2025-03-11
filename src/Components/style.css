@@ -225,6 +225,7 @@
     color: #87CEEB;
 }
 
+/* Updated social links styles */
 .social-links {
     display: flex;
     gap: 1rem;
@@ -243,8 +244,31 @@
 
 .social-links a:hover {
     background: white;
-    color: #0047AB;
     transform: translateY(-3px);
+}
+
+.social-links a:hover .social-icon {
+    color: #0047AB;
+}
+
+/* New styles for icons */
+.social-icon {
+    font-size: 1.2rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.footer-icon {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Contact info styles */
+.footer-section p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .footer-bottom {

@@ -28,7 +28,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/unisitedb').then(() => console.log('
 
 //Register page
 var registerSchema = mongoose.Schema({
-    name:String,
+    firstname:String,
+    lastname:String,
     phone:String,
     email:{type:String,unique:true},
     rollno:{type:String,unique:true},
@@ -44,7 +45,8 @@ var registerModel = mongoose.model("register",registerSchema,"register");
 app.post("/api/register",async(req,res)=>
 {
     var newrecord = new registerModel({
-        name:req.body.name,
+        firstname:req.body.firstname,
+        lastname:req.body.lastname,
         phone:req.body.phone,
         email:req.body.email,
         rollno:req.body.rollno,

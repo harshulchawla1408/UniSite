@@ -1,5 +1,7 @@
 import './style.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -16,17 +18,17 @@ function Footer() {
         </div>
         <div className="footer-section">
           <h3>Contact Us</h3>
-          <p><i className="fas fa-map-marker-alt"></i> Punjabi University, Patiala</p>
-          <p><i className="fas fa-phone"></i> +91 XXX XXX XXXX</p>
-          <p><i className="fas fa-envelope"></i> placement@punjabiuniversity.ac.in</p>
+          <p><FaMapMarkerAlt className="footer-icon" /> Punjabi University, Patiala</p>
+          <p><FaPhone className="footer-icon" /> +91-9780383937</p>
+          <p><FaEnvelope className="footer-icon" /> placement@pbiuni.edu.in</p>
         </div>
         <div className="footer-section">
           <h3>Connect With Us</h3>
           <div className="social-links">
-            <a href="#"><i className="fab fa-facebook"></i></a>
-            <a href="#"><i className="fab fa-twitter"></i></a>
-            <a href="#"><i className="fab fa-linkedin"></i></a>
-            <a href="#"><i className="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/punjabiuniversity.placement/"><FaFacebook className="social-icon" /></a>
+            <a href="https://x.com/pbiunipatiala?lang=en"><FaTwitter className="social-icon" /></a>
+            <a href="https://www.linkedin.com/in/placement-cell-punjabi-university-81a5b763/"><FaLinkedin className="social-icon" /></a>
+            <a href="https://www.instagram.com/placement_cell_pupatiala/"><FaInstagram className="social-icon" /></a>
           </div>
         </div>
       </div>

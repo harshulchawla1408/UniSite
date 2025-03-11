@@ -25,7 +25,7 @@ function Header() {
               ) : (
                 <h4 className="welcome-user">
                   <b>
-                    <span>Welcome {udata.name}</span>
+                    <span>Welcome {udata.firstname}</span>
                   </b>
                 </h4>
               )}
@@ -36,7 +36,7 @@ function Header() {
         </div>
         <div className="header-main">
           <div className="logo-section">
-            <img src="../images/logo2.jpg" alt="University Logo" className="logo logo1" />
+            <img src="../images/logo1.png" alt="University Logo" className="logo logo1" />
             {/* <img src="../images/logo2.jpg" alt="University Logo" className="logo logo2" /> */}
           </div>
           <nav className="main-nav">
@@ -46,9 +46,9 @@ function Header() {
               <span></span>
             </button>
             <ul className="nav-links">
-              <li><Link to="/">Home</Link></li>
+              <li><Link to="/home">Home</Link></li>
+              <li><Link to="/about">About us</Link></li>
               <li><Link to="/placements">Placements</Link></li>
-              <li><Link to="/companies">Companies</Link></li>
               <li><Link to="/register">Students Registration</Link></li>
               <li><Link to="/login">Students Login</Link></li>
             </ul>
