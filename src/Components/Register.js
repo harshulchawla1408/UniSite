@@ -17,7 +17,7 @@ function Register() {
   const [batch, setBatch] = useState();
   const [rollno, setRollno] = useState();
   const [degree, setDegree] = useState();
-  
+
   async function onRegister(e) {
     e.preventDefault();
     if (terms === true) {
@@ -38,16 +38,16 @@ function Register() {
       } else {
         toast.warn("Password and Confirm Password does not match");
       }
-    } 
+    }
     else {
       toast.warn("Please accept terms & conditions");
     }
-    }
+  }
 
   return (
     <div className="register-container">
       <h2>Student Registration</h2>
-      
+
       <form className="register-form" onSubmit={onRegister}>
         <div className="registration-section">
           <h3 className="section-title">Personal Details</h3>
@@ -58,7 +58,7 @@ function Register() {
             </div>
             <div className="form-section">
               <label>Last Name</label>
-              <input type="text" name="lastname" onChange={(e) => setLastname(e.target.value)} placeholder="Last Name"  />
+              <input type="text" name="lastname" onChange={(e) => setLastname(e.target.value)} placeholder="Last Name" />
             </div>
             <div className="form-section">
               <label>Date of Birth</label>
@@ -122,37 +122,41 @@ function Register() {
             </div>
             <div className="form-section">
               <label>Roll No.</label>
-              <input type="number" name="rollno" onChange={(e) => setRollno(e.target.value)} placeholder="Roll No." required=""/>
+              <input type="number" name="rollno" onChange={(e) => setRollno(e.target.value)} placeholder="Roll No." required="" />
             </div>
           </div>
         </div>
         <div className="registration-section">
-        <h3 className="section-title">Password and Confirmation</h3>
-        <div className="form-grid">
-        <div className="form-section">
-          <label>Password:</label>
-          <input type="password" name="pass" onChange={(e) => setPass(e.target.value)} placeholder="Password" required="" />
-        </div>
-        <div className="form-section">
-          <label>Confirm Password:</label>
-          <input type="password" name="cpass" onChange={(e) => setCpass(e.target.value)} placeholder="Confirm Password" required="" />
-        </div>
-        <div className="" style={{ textAlign: "left" }}>
-          <label>Confirmation:</label>
-          <div>
-          <span style={{ marginLeft: "0px" }}>
-          <label className="checkbox">
-            <input type="checkbox" name="cbox" onChange={(e) => setTerms(e.target.checked)} />
-            Make sure that all the details are correct and true. After Registration, Email and Mobile number can't be edited, so re-check all details and then click on confirmation check box.
-            </label>
-            </span>
+          <h3 className="section-title">Password and Confirmation</h3>
+          <div className="form-grid">
+            <div className="form-section">
+              <label>Password:</label>
+              <input type="password" name="pass" onChange={(e) => setPass(e.target.value)} placeholder="Password" required="" />
+            </div>
+            <div className="form-section">
+              <label>Confirm Password:</label>
+              <input type="password" name="cpass" onChange={(e) => setCpass(e.target.value)} placeholder="Confirm Password" required="" />
+            </div>
+            <div className="form-section form-full-width" style={{ textAlign: "left" }}>
+              <label>Confirmation:</label>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <input
+                  type="checkbox"
+                  name="cbox"
+                  style={{ marginRight: "10px", width: "16px", height: "16px" }}
+                  onChange={(e) => setTerms(e.target.checked)}
+                />
+                <label style={{ textAlign: "left", lineHeight: "1.5", cursor: "pointer" }}>
+                  Make sure that all the details are correct and true. After Registration, Email and Mobile number
+                  can't be edited, so re-check all details and then click on the confirmation check box.
+                </label>
+              </div>
+            </div>
           </div>
-        </div>
-        </div>
         </div>
         <div className="form-actions">
           <button type="submit" className="register-button" value="Register">Register</button>
-          <button type="reset" className="register-button" style={{background: '#6c757d'}}>Reset</button>
+          <button type="reset" className="register-button" style={{ background: '#6c757d' }}>Reset</button>
         </div>
       </form>
     </div>
