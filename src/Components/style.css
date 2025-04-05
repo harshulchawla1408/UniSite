@@ -1068,3 +1068,83 @@
         height: 400px;
     }
 }
+
+/* Container Styling */
+.resources-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  /* Hero Section Styling
+  .hero-section {
+    text-align: center;
+    background: linear-gradient(135deg, #6e57e0, #48c6ef);
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .hero-section p {
+    font-size: 1.2rem;
+  } */
+  
+  /* Company-wise PYQs Section */
+  .pyqs-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .pyqs-section h2 {
+    margin-bottom: 10px;
+  }
+  .company-filter {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  .pyqs-content h3 {
+    margin-top: 10px;
+    color: #6e57e0;
+  }
+  
+  /* Study Resources Section */
+  .study-resources, .preparation-roadmap, .alumni-stories, .admin-upload {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .study-resources ul, .preparation-roadmap ul {
+    list-style: none;
+    padding: 0;
+  }
+  .study-resources li, .preparation-roadmap li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Button Styling */
+  .admin-upload button {
+    background: #6e57e0;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .admin-upload button:hover {
+    background: #5641b1;
+  }
+  

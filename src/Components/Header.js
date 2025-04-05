@@ -48,7 +48,7 @@ function Header() {
             <ul className="nav-links">
               <li><Link to="/home">Home</Link></li>
               <li><Link to="/about">About us</Link></li>
-              <li><Link to="/placements">Placements</Link></li>
+              <li><Link to="/resources">Resources</Link></li>
               <li><Link to="/register">Students Registration</Link></li>
               <li><Link to="/login">Students Login</Link></li>
             </ul>

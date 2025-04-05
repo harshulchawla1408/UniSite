@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Sample data for hero slider
   const heroSlides = [
     {
       image: "../images/slide1.jpg",
@@ -27,13 +26,12 @@ function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-slider">
           {heroSlides.map((slide, index) => (
@@ -60,7 +58,6 @@ function Home() {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="about-section">
         <div className="section-container">
           <h2 className="section-title">About Placement Cell</h2>
@@ -87,7 +84,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="stats-section">
         <div className="section-container">
           <div className="stats-grid">
@@ -115,12 +111,10 @@ function Home() {
         </div>
       </section>
 
-      {/* Top Recruiters */}
       <section className="recruiters-section">
         <div className="section-container">
           <h2 className="section-title">Top Recruiters</h2>
           <div className="recruiters-scroll">
-            {/* Add company logos here */}
             <div className="recruiter-logos">
               <img src="../images/company1.jpg" alt="Company 1" />
               <img src="../images/company2.png" alt="Company 2" />
@@ -137,7 +131,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Placement Process */}
       <section className="process-section">
         <div className="section-container">
           <h2 className="section-title">Placement Process</h2>
@@ -166,7 +159,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Upcoming Events */}
       <section className="events-section">
         <div className="section-container">
           <h2 className="section-title">Upcoming Placement Drives</h2>
@@ -182,12 +174,10 @@ function Home() {
                 <Link to="/events" className="event-link">Learn More →</Link>
               </div>
             </div>
-            {/* Add more event cards */}
           </div>
         </div>
       </section>
 
-      {/* Resources Section */}
       <section className="resources-section">
         <div className="section-container">
           <h2 className="section-title">Placement Resources</h2>
@@ -198,12 +188,10 @@ function Home() {
               <p>Access study materials and guides</p>
               <Link to="/resources" className="resource-link">View Resources</Link>
             </div>
-            {/* Add more resource cards */}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section className="contact-section">
         <div className="section-container">
           <h2 className="section-title">Contact Placement Cell</h2>
