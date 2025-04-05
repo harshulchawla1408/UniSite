@@ -5,8 +5,8 @@ import Login from "./Login";
 import About from "./About";
 import Resources from "./Resources";
 
-function SiteRoutes(){
-    return(
+function SiteRoutes() {
+    return (
         <>
         <Routes>
             <Route path="/" element={<Home/>}/>

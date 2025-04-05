@@ -2,7 +2,7 @@ import './style.css';
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "../App";
-
+// import { Link } from "react-router-dom";
 function Header() {
   const { udata, setudata } = useContext(userContext);
   const navigate = useNavigate();
@@ -16,20 +16,20 @@ function Header() {
       <div className="header-container">
         <div className="header-top">
           <div className="welcome-user">
-          {udata === null ? (
-                <h4 className="welcome-guest">
-                  <b>
-                    <span>Welcome Guest</span>
-                  </b>
-                </h4>
-              ) : (
-                <h4 className="welcome-user">
-                  <b>
-                    <span>Welcome {udata.firstname}</span>
-                  </b>
-                </h4>
-              )}
-            </div>
+            {udata === null ? (
+              <h4 className="welcome-guest">
+                <b>
+                  <span>Welcome Guest</span>
+                </b>
+              </h4>
+            ) : (
+              <h4 className="welcome-user">
+                <b>
+                  <span>Welcome {udata.firstname}</span>
+                </b>
+              </h4>
+            )}
+          </div>
           <div className="admin-login">
             <Link to="/adminlogin">Campus Admin Login</Link>
           </div>
