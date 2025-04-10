@@ -49,6 +49,9 @@ function Header() {
               <li><Link to="/home">Home</Link></li>
               <li><Link to="/about">About us</Link></li>
               <li><Link to="/resources">Resources</Link></li>
+              <li><Link to="https://docs.google.com/forms/d/e/1FAIpQLSdrYYf-KpGe4BOZ3RmpxM0FxDZUr4-Mv-auSTbT2ybMbrIMHw/viewform?usp=dialog">Form</Link></li>
+              <li><Link to="/admin">Admin</Link></li> {/* Add this line */}
+              <li><Link to="/filter">Filter</Link></li>
               <li><Link to="/register">Students Registration</Link></li>
               <li><Link to="/login">Students Login</Link></li>
             </ul>
