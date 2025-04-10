@@ -43,6 +43,18 @@ function Home() {
               <div className="slide-content">
                 <h1>{slide.title}</h1>
                 <p>{slide.subtitle}</p>
+                {index === 0 && (
+                  <div className="hero-actions">
+                    <a 
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdrYYf-KpGe4BOZ3RmpxM0FxDZUr4-Mv-auSTbT2ybMbrIMHw/viewform?usp=sharing" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hero-button registration-button"
+                    >
+                      Register for Placements
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -126,53 +138,6 @@ function Home() {
               <img src="../images/company8.png" alt="Company 8" />
               <img src="../images/company9.png" alt="Company 9" />
               <img src="../images/company10.png" alt="Company 10" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="process-section">
-        <div className="section-container">
-          <h2 className="section-title">Placement Process</h2>
-          <div className="process-steps">
-            <div className="step">
-              <div className="step-number">1</div>
-              <h3>Registration</h3>
-              <p>Complete your profile registration</p>
-            </div>
-            <div className="step">
-              <div className="step-number">2</div>
-              <h3>Verification</h3>
-              <p>Document verification process</p>
-            </div>
-            <div className="step">
-              <div className="step-number">3</div>
-              <h3>Training</h3>
-              <p>Pre-placement training sessions</p>
-            </div>
-            <div className="step">
-              <div className="step-number">4</div>
-              <h3>Interviews</h3>
-              <p>Company interviews and selection</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="events-section">
-        <div className="section-container">
-          <h2 className="section-title">Upcoming Placement Drives</h2>
-          <div className="events-grid">
-            <div className="event-card">
-              <div className="event-date">
-                <span className="day">15</span>
-                <span className="month">MAR</span>
-              </div>
-              <div className="event-details">
-                <h3>Microsoft Recruitment Drive</h3>
-                <p>For B.Tech CSE & IT Students</p>
-                <Link to="/events" className="event-link">Learn More →</Link>
-              </div>
             </div>
           </div>
         </div>

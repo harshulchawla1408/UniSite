@@ -1,89 +1,153 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 function Resources() {
     const [selectedCompany, setSelectedCompany] = useState("");
-    const companies = ["TCS", "Infosys", "Wipro", "Amazon", "Cognizant"];
-  
-    const handleCompanyChange = (e) => {
-      setSelectedCompany(e.target.value);
-    };
-  
+    const [activeTab, setActiveTab] = useState("pyqs");
+
+    const companies = [
+        { name: "Amazon", logo: "amazon.png" },
+        { name: "Microsoft", logo: "microsoft.png" },
+        { name: "Google", logo: "google.png" },
+        { name: "TCS", logo: "tcs.png" },
+        { name: "Infosys", logo: "infosys.png" },
+        { name: "Wipro", logo: "wipro.png" },
+        { name: "Cognizant", logo: "cognizant.png" },
+        { name: "Quark", logo: "quark.png" },
+        { name: "Jio", logo: "jio.png" },
+    ];
+
+    const studyResources = [
+        {
+            title: "Coding Practice",
+            icon: "💻",
+            items: [
+                { name: "LeetCode Premium Problems", link: "#" },
+                { name: "HackerRank Challenges", link: "#" },
+                { name: "CodeForces Contests", link: "#" },
+                { name: "InterviewBit DSA Track", link: "#" },
+            ],
+        },
+        {
+            title: "Aptitude & Reasoning",
+            icon: "🎯",
+            items: [
+                { name: "Quantitative Aptitude PDF", link: "#" },
+                { name: "Logical Reasoning Guide", link: "#" },
+                { name: "Verbal Ability Practice", link: "#" },
+                { name: "Mock Aptitude Tests", link: "#" },
+            ],
+        },
+        {
+            title: "Interview Preparation",
+            icon: "🎤",
+            items: [
+                { name: "HR Interview Questions", link: "#" },
+                { name: "Technical Interview Guide", link: "#" },
+                { name: "Mock Interview Videos", link: "#" },
+                { name: "Company Specific Tips", link: "#" },
+            ],
+        },
+        {
+            title: "Core Subjects",
+            icon: "📚",
+            items: [
+                { name: "DSA Complete Notes", link: "#" },
+                { name: "DBMS Quick Review", link: "#" },
+                { name: "OS Concepts Guide", link: "#" },
+                { name: "CN Important Topics", link: "#" },
+            ],
+        },
+    ];
+
     return (
-      <div className="resources-container">
-        {/* Hero Section */}
-        <section className="hero-section">
-          <div className="hero-content">
-            <h1>Placement Resources & PYQs Hub</h1>
-            <p>
-              Prepare smarter with previous year questions, company insights, and
-              essential resources — all in one place!
-            </p>
-          </div>
-        </section>
-  
-        {/* Company-wise PYQs Section */}
-        <section className="pyqs-section">
-          <h2>Company-wise Previous Year Questions</h2>
-          <select className="company-filter" onChange={handleCompanyChange}>
-            <option value="">Select Company</option>
-            {companies.map((company, index) => (
-              <option key={index} value={company}>
-                {company}
-              </option>
-            ))}
-          </select>
-          {selectedCompany && (
-            <div className="pyqs-content">
-              <h3>{selectedCompany} - Aptitude Questions</h3>
-              <p>Download Aptitude PYQs for {selectedCompany}</p>
-              <h3>{selectedCompany} - Technical Questions</h3>
-              <p>Download Technical PYQs for {selectedCompany}</p>
-              <h3>{selectedCompany} - HR Interview Questions</h3>
-              <p>Prepare for HR interviews with {selectedCompany} specific questions</p>
+        <div className="resources-container">
+            <div className="resources-welcome">
+                <h1>Placement Resources & PYQs Hub</h1>
+                <p>Your one-stop destination for placement preparation materials</p>
             </div>
-          )}
-        </section>
-  
-        {/* Study Resources Section */}
-        <section className="study-resources">
-          <h2>Study Resources</h2>
-          <ul>
-            <li>Top Coding Platforms: Leetcode, HackerRank, Codeforces</li>
-            <li>Aptitude & Reasoning PDFs</li>
-            <li>Resume Building Tips + Sample Resumes</li>
-            <li>Group Discussion Topics + Model Answers</li>
-            <li>Quick Revision Notes: DSA, DBMS, OS, CN, OOPs</li>
-          </ul>
-        </section>
-  
-        {/* Preparation Roadmap Section */}
-        <section className="preparation-roadmap">
-          <h2>Preparation Roadmap</h2>
-          <p>Weekly study plans and a checklist for coding, aptitude, projects, and interview prep.</p>
-          <ul>
-            <li>✅ Coding Practice</li>
-            <li>✅ Aptitude Skills</li>
-            <li>✅ Resume Building</li>
-            <li>✅ Project Showcase</li>
-            <li>✅ Interview Prep</li>
-          </ul>
-        </section>
-  
-        {/* Alumni Success Stories Section */}
-        <section className="alumni-stories">
-          <h2>Alumni Success Stories</h2>
-          <p>Get inspired by success stories from seniors who cracked top companies!</p>
-        </section>
-  
-        {/* Motivational Footer Section */}
-        <section className="footer-section">
-          <h2>🚀 Your Placement Journey Starts Here!</h2>
-          <p>Every click brings you closer to success!</p>
-          <a href="/placement-dashboard">Back to Placement Dashboard</a>
-          <a href="/upcoming-drives">Check Upcoming Drives</a>
-        </section>
-      </div>
+
+            <div className="resources-tabs">
+                <button
+                    className={`tab-btn ${activeTab === "pyqs" ? "active" : ""}`}
+                    onClick={() => setActiveTab("pyqs")}
+                >
+                    Previous Year Papers
+                </button>
+                <button
+                    className={`tab-btn ${activeTab === "study" ? "active" : ""}`}
+                    onClick={() => setActiveTab("study")}
+                >
+                    Study Resources
+                </button>
+            </div>
+
+            {activeTab === "pyqs" && (
+                <section className="companies-section">
+                    <div className="companies-grid">
+                        {companies.map((company, index) => (
+                            <div key={index} className="company-card" onClick={() => setSelectedCompany(company.name)}>
+                                <div className="company-logo">{company.name[0]}</div>
+                                <h3>{company.name}</h3>
+                                <div className={`company-resources ${selectedCompany === company.name ? "active" : ""}`}>
+                                    <div className="resource-link">
+                                        <span>📝 Aptitude Questions</span>
+                                        <a href="#" className="download-btn">Download PDF</a>
+                                    </div>
+                                    <div className="resource-link">
+                                        <span>💻 Technical Questions</span>
+                                        <a href="#" className="download-btn">Download PDF</a>
+                                    </div>
+                                    <div className="resource-link">
+                                        <span>🎯 Coding Questions</span>
+                                        <a href="#" className="download-btn">Download PDF</a>
+                                    </div>
+                                    <div className="resource-link">
+                                        <span>🗣️ Interview Questions</span>
+                                        <a href="#" className="download-btn">Download PDF</a>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            {activeTab === "study" && (
+                <section className="study-section">
+                    <div className="resources-grid">
+                        {studyResources.map((category, index) => (
+                            <div key={index} className="resource-card">
+                                <div className="resource-header">
+                                    <span className="resource-icon">{category.icon}</span>
+                                    <h3>{category.title}</h3>
+                                </div>
+                                <div className="resource-links">
+                                    {category.items.map((item, idx) => (
+                                        <a key={idx} href={item.link} className="resource-item">
+                                            {item.name}
+                                            <span className="arrow">→</span>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
+            <section className="resources-footer">
+                <div className="footer-content">
+                    <h2>🚀 Ready to Begin Your Preparation?</h2>
+                    <p>Access all materials and start your journey towards success</p>
+                    <div className="footer-actions">
+                        <a href="#" className="footer-btn secondary">Download Study Plan</a>
+                    </div>
+                </div>
+            </section>
+        </div>
     );
-  }
+}
   
   export default Resources;
   

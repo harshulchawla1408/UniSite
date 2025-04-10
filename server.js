@@ -77,35 +77,19 @@ app.post("/api/register", async (req, res) => {
 })
 
 //Login page
-// app.post("/api/login", async (req, res) => {
-//     var result = await registerModel.find({
-//         email: req.body.email,
-//         password: req.body.pass
-//     }).select("-password").select("-phone");
-//     if (result.length === 0) {
-//         res.status(200).send({ statuscode: 0 })
-//     }
-//     else {
-//         res.status(200).send({ statuscode: 1, pdata: result[0] })
-//     }
-// })
-// Modify Login API
 app.post("/api/login", async (req, res) => {
-    var user = await registerModel.findOne({ email: req.body.email });
-
-    if (!user || user.password !== req.body.pass) {
-        return res.status(401).send({ statuscode: 0, msg: "Invalid Credentials" });
+    var result = await registerModel.find({
+        email: req.body.email,
+        password: req.body.pass
+    }).select("-password").select("-phone");
+    if (result.length === 0) {
+        res.status(200).send({ statuscode: 0 })
     }
+    else {
+        res.status(200).send({ statuscode: 1, pdata: result[0] })
+    }
+})
 
-    const token = generateToken(user);
-
-    res.status(200).send({
-        statuscode: 1,
-        token,
-        user: { firstname: user.firstname, email: user.email, rollno: user.rollno, batch: user.batch }
-    });
-});
-// Get student details
 router.get("/user", async (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1]; // Extract token
@@ -117,9 +101,9 @@ router.get("/user", async (req, res) => {
     }
 });
 
-
+module.exports = router;
 app.listen(port, () => {
     console.log("Server is running on " + port);
 })
 
-module.exports = router;
+
