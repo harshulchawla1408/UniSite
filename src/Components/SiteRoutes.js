@@ -5,7 +5,7 @@ import Login from "./Login";
 import About from "./About";
 import Resources from "./Resources";
 import Admin from "./Admin";
-// import FilterStudents from "./FilterStudents";
+import FilterStudents from "./FilterStudents";
 // import FilterPage from "./FilterPage";
 import ExcelFilterForm from "./ExcelFilterForm";
 
@@ -18,10 +18,9 @@ function SiteRoutes() {
             <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/about" element={<About/>}/>
-            {/* <Route path="/about" element={<About/>}/> */}
             <Route path="/admin" element={<Admin/>}/>
-            {/* <Route path="/filter" element={<FilterStudents/>}/> */}
-            <Route path="/filter" element={<ExcelFilterForm />} />
+            <Route path="/filter" element={<FilterStudents/>}/>
+            {/* <Route path="/filter" element={<ExcelFilterForm />} /> */}
             <Route path="/resources" element={<Resources/>}/>
         </Routes></>
     )
