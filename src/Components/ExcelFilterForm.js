@@ -21,18 +21,23 @@ function ExcelFilterForm() {
     const formData = new FormData();
     formData.append('excel', file);
     formData.append('filters', JSON.stringify(filters));
-
-    const res = await axios.post('http://localhost:9000/filter-excel', formData, {
-      responseType: 'blob',
-    });
-
-    // Download filtered Excel file
-    const url = window.URL.createObjectURL(new Blob([res.data]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'filtered_students.xlsx');
-    document.body.appendChild(link);
-    link.click();
+  
+    try {
+      const res = await axios.post('http://localhost:9000/api/filter-excel', formData, {
+        responseType: 'blob',
+      });
+  
+      // Download filtered Excel file
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'filtered.xlsx');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (error) {
+      console.error('Error while submitting the form:', error);
+    }
   };
 
   return (

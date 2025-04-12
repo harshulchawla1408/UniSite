@@ -19,8 +19,8 @@ function SiteRoutes() {
             <Route path="/login" element={<Login/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/admin" element={<Admin/>}/>
-            <Route path="/filter" element={<FilterStudents/>}/>
-            {/* <Route path="/filter" element={<ExcelFilterForm />} /> */}
+            {/* <Route path="/filter" element={<FilterStudents/>}/> */}
+            <Route path="/filter" element={<ExcelFilterForm />} />
             <Route path="/resources" element={<Resources/>}/>
         </Routes></>
     )
