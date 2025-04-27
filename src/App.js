@@ -6,7 +6,7 @@ import SiteRoutes from './Components/SiteRoutes';
 import { createContext, useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-
+import Chatbot from './Components/Chatbot';
 
 const userContext = createContext(null);
 
@@ -29,6 +29,7 @@ function App() {
           <Header />
         )}     
       <SiteRoutes/>
+      <Chatbot/>
       <Footer/>   
       </userContext.Provider>
       <ToastContainer theme="colored" />
