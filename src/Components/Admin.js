@@ -172,6 +172,7 @@ function Admin() {
           justifyContent: 'center',
           gap: '20px',
           flexWrap: 'wrap',
+          
         }}
       >
         {/* Filter Button */}

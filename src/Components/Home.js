@@ -194,6 +194,7 @@
 // export default Home;
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Register from './Register'; // Assuming you have a Register component
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -248,7 +249,7 @@ function Home() {
     heroButton: {
       marginTop: '20px',
       padding: '10px 20px',
-      backgroundColor: '#0056b3',
+      backgroundColor: ' #003366 ',
       color: 'white',
       textDecoration: 'none',
       borderRadius: '5px',
@@ -316,7 +317,7 @@ function Home() {
           ))}
         </div>
       </section>
-
+      <Register />
       {/* About Section */}
       <section>
         <div style={styles.sectionContainer}>
@@ -388,40 +389,173 @@ function Home() {
       </section>
 
       {/* Resources Section */}
-      <section>
-        <div style={styles.sectionContainer}>
-          <h2 style={styles.sectionTitle}>Placement Resources</h2>
-          <div style={styles.resourcesGrid}>
-            <div style={styles.resourceCard}>
-              <h3>Interview Preparation</h3>
-              <p>Access study materials and guides</p>
-              <Link to="/resources">View Resources</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+<section>
+  <div style={{
+    padding: '40px 20px', 
+    backgroundColor: '#f5f5f5', 
+    borderRadius: '10px', 
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+    textAlign: 'center'
+  }}>
+    <h2 style={{
+      fontSize: '2rem', 
+      color: '#003366', 
+      fontWeight: 'bold', 
+      marginBottom: '20px'
+    }}>
+      Placement Resources
+    </h2>
+    <div style={{
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+      gap: '20px', 
+      justifyContent: 'center'
+    }}>
+      <div style={{
+        backgroundColor: '#ffffff', 
+        padding: '30px', 
+        borderRadius: '8px', 
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+        transition: 'transform 0.3s, box-shadow 0.3s'
+      }}>
+        <h3 style={{
+          fontSize: '1.5rem', 
+          color: '#003366', 
+          marginBottom: '10px'
+        }}>
+          Interview Preparation
+        </h3>
+        <p style={{
+          fontSize: '1rem', 
+          color: '#666', 
+          marginBottom: '15px'
+        }}>
+          Access study materials and guides
+        </p>
+        <Link to="/resources" style={{
+          backgroundColor: '#4CAF50', 
+          color: 'white', 
+          padding: '10px 20px', 
+          textDecoration: 'none', 
+          borderRadius: '5px', 
+          fontSize: '1rem', 
+          transition: 'background-color 0.3s'
+        }} 
+        onMouseEnter={(e) => e.target.style.backgroundColor = '#45a049'} 
+        onMouseLeave={(e) => e.target.style.backgroundColor = '#4CAF50'}>
+          View Resources
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+{/* Contact Section */}
+<section>
+  <div style={{
+    padding: '40px 20px', 
+    backgroundColor: '#f9f9f9', 
+    borderRadius: '10px', 
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+    textAlign: 'center'
+  }}>
+    <h2 style={{
+      fontSize: '2rem', 
+      color: '#003366', 
+      fontWeight: 'bold', 
+      marginBottom: '30px'
+    }}>
+      Contact Placement Cell
+    </h2>
+    <div style={{
+      display: 'grid', 
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+      gap: '20px', 
+      justifyContent: 'center'
+    }}>
+      {/* Contact Information */}
+      <div style={{
+        backgroundColor: '#ffffff', 
+        padding: '30px', 
+        borderRadius: '8px', 
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        textAlign: 'left',
+        color: '#333'
+      }}>
+        <p style={{fontSize: '1rem', marginBottom: '15px'}}><b>Email:</b> placement@pbi.ac.in</p>
+        <p style={{fontSize: '1rem', marginBottom: '15px'}}><b>Phone:</b> +91 XXX XXX XXXX</p>
+        <p style={{fontSize: '1rem', marginBottom: '15px'}}><b>Address:</b> Career and Counselling cum Placement Cell,<br />Punjabi University, Patiala (Punjab)</p>
+      </div>
 
-      {/* Contact Section */}
-      <section>
-        <div style={styles.sectionContainer}>
-          <h2 style={styles.sectionTitle}>Contact Placement Cell</h2>
-          <div style={styles.contactGrid}>
-            <div style={styles.contactInfo}>
-              <p><b>Email:</b> placement@pbi.ac.in</p>
-              <p><b>Phone:</b> +91 XXX XXX XXXX</p>
-              <p><b>Address:</b> Career and Counselling cum Placement Cell,<br />Punjabi University, Patiala (Punjab)</p>
-            </div>
-            <div style={styles.contactForm}>
-              <form>
-                <input type="text" placeholder="Your Name" style={styles.input} />
-                <input type="email" placeholder="Your Email" style={styles.input} />
-                <textarea placeholder="Your Message" style={styles.textarea}></textarea>
-                <button type="submit" style={styles.submitBtn}>Send Message</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact Form */}
+      <div style={{
+        backgroundColor: '#ffffff', 
+        padding: '30px', 
+        borderRadius: '8px', 
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+      }}>
+        <form>
+          <input 
+            type="text" 
+            placeholder="Your Name" 
+            style={{
+              width: '100%', 
+              padding: '12px', 
+              marginBottom: '15px', 
+              borderRadius: '5px', 
+              border: '1px solid #ccc', 
+              fontSize: '1rem', 
+              boxSizing: 'border-box'
+            }} 
+          />
+          <input 
+            type="email" 
+            placeholder="Your Email" 
+            style={{
+              width: '100%', 
+              padding: '12px', 
+              marginBottom: '15px', 
+              borderRadius: '5px', 
+              border: '1px solid #ccc', 
+              fontSize: '1rem', 
+              boxSizing: 'border-box'
+            }} 
+          />
+          <textarea 
+            placeholder="Your Message" 
+            style={{
+              width: '100%', 
+              padding: '12px', 
+              marginBottom: '20px', 
+              borderRadius: '5px', 
+              border: '1px solid #ccc', 
+              fontSize: '1rem', 
+              boxSizing: 'border-box', 
+              minHeight: '150px'
+            }}
+          />
+          <button 
+            type="submit" 
+            style={{
+              backgroundColor: '#4CAF50', 
+              color: 'white', 
+              padding: '12px 20px', 
+              border: 'none', 
+              borderRadius: '5px', 
+              fontSize: '1rem', 
+              cursor: 'pointer', 
+              transition: 'background-color 0.3s'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#45a049'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = '#4CAF50'}
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }
