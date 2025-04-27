@@ -26,15 +26,85 @@ body {
 }
 
 /* Header Styles */
-.main-header {
-    /* background: linear-gradient(135deg, #0047AB 0%, #1E90FF 100%); */
-    background: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
 
+/* Attractive Welcome Message */
+.welcome-user-attractive {
+    position: absolute;
+    left: 30px;
+    top: 18px;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 1px 2px 8px rgba(30, 144, 255, 0.12), 0 1px 0 #fff;
+    letter-spacing: 1px;
+    z-index: 20;
+    animation: fadeInLeft 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.login-btn {
+    background: linear-gradient(90deg, #00e676 0%, #00c853 100%);
+    color: #fff !important;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.07rem;
+    padding: 8px 28px;
+    box-shadow: 0 2px 10px rgba(0, 230, 118, 0.15);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    outline: none;
+    margin-left: 12px;
+}
+.login-btn:hover, .login-btn:focus {
+    background: linear-gradient(90deg, #00c853 0%, #00e676 100%);
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 230, 118, 0.23);
+}
+
+.logout-btn {
+    background: linear-gradient(90deg, #ff1744 0%, #d50000 100%);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.07rem;
+    padding: 8px 28px;
+    box-shadow: 0 2px 10px rgba(255, 23, 68, 0.15);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    outline: none;
+    margin-left: 12px;
+}
+.logout-btn:hover, .logout-btn:focus {
+    background: linear-gradient(90deg, #d50000 0%, #ff1744 100%);
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 23, 68, 0.23);
+}
+
+.anim-btn {
+    animation: popIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Header background restored */
+.main-header {
+    background: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
     padding: 0;
     width: 100%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 .header-container {
     max-width: 1400px;
     margin: 0 auto;

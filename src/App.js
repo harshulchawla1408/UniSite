@@ -6,7 +6,6 @@ import SiteRoutes from './Components/SiteRoutes';
 import { createContext, useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import AcademicDetails from "./Components/AcademicDetails";
 
 
 const userContext = createContext(null);

@@ -1,22 +1,33 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { userContext } from "../App";
 
 function Login() {
-    const [email, setEmail] = useState();
-    const [pass, setPass] = useState();
+    const [applicationId, setApplicationId] = useState("");
+    const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const { setudata } = useContext(userContext);
 
     async function onLogin(e) {
         e.preventDefault();
-        const logindata = { email, pass };
+        const logindata = { applicationId, password };
         try {
             const resp = await axios.post("http://localhost:9000/api/login", logindata);
             toast.success("Login Successful");
-            console.log(resp.data);
-            navigate ("/home");
-
+            // Save user data to sessionStorage and context
+            const userData = {
+                applicationId: resp.data.user.applicationId,
+                usertype: resp.data.user.usertype // 'student' or 'admin'
+            };
+            sessionStorage.setItem("userdata", JSON.stringify(userData));
+            setudata(userData);
+            if (userData.usertype === 'student') {
+                navigate("/home");
+            } else if (userData.usertype === 'admin') {
+                navigate("/home");
+            }
         } catch (err) {
             toast.error("Invalid Credentials");
         }
@@ -27,13 +38,13 @@ function Login() {
             <h2>Student Login</h2>
             <form onSubmit={onLogin} className="login-form">
                 <div className="form-section">
-                    <label>Email:</label>
-                    <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" required="" />
+                    <label>Application ID</label>
+                    <input type="text" value={applicationId} onChange={(e) => setApplicationId(e.target.value)} placeholder="Application ID" required />
                 </div>
 
                 <div className="form-section">
                     <label>Password:</label>
-                    <input type="password" onChange={(e) => setPass(e.target.value)} placeholder="Password" required="" />
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                 </div>
 
                 <button type="submit" className="login-button">Login</button>

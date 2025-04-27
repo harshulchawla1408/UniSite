@@ -1,29 +1,28 @@
 import { Route, Routes } from "react-router-dom";
-import Register from "./Register";
+import { useNavigate } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import About from "./About";
 import Resources from "./Resources";
 import Admin from "./Admin";
-import FilterStudents from "./FilterStudents";
-// import FilterPage from "./FilterPage";
 import ExcelFilterForm from "./ExcelFilterForm";
-
+import { useContext } from "react";
+import { userContext } from "../App";
 function SiteRoutes() {
+    const { udata } = useContext(userContext);
+    const Navigate = useNavigate();
+    const isAdmin = udata && udata.usertype === "admin";
     return (
         <>
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/home" element={<Home/>}/>
-            <Route path="/register" element={<Register/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/about" element={<About/>}/>
-            <Route path="/admin" element={<Admin/>}/>
-            {/* <Route path="/filter" element={<FilterStudents/>}/> */}
-            <Route path="/filter" element={<ExcelFilterForm />} />
-            <Route path="/resources" element={<Resources/>}/>
+            <Route path="/admin" element={isAdmin ? <Admin/> : <Navigate to="/home" replace />} />
+            <Route path="/filter" element={isAdmin ? <ExcelFilterForm /> : <Navigate to="/home" replace />} />
+            {(!isAdmin) && <Route path="/resources" element={<Resources/>}/>} 
         </Routes></>
     )
-
 }
 export default SiteRoutes; 
