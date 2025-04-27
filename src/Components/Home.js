@@ -1,3 +1,197 @@
+// import React, { useState, useEffect } from 'react';
+// import { Link } from 'react-router-dom';
+
+// function Home() {
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   const heroSlides = [
+//     {
+//       image: "../images/slide1.jpg",
+//       title: "Welcome to Placement Cell",
+//       subtitle: "Shaping Careers, Building Futures"
+//     },
+//     {
+//       image: "../images/slide2.jpg",
+//       title: "100+ Companies",
+//       subtitle: "Recruiting Every Year"
+//     },
+//     {
+//       image: "../images/slide3.jpg",
+//       title: "95% Placement Rate",
+//       subtitle: "For 2023 Batch"
+//     }
+//   ];
+
+//   // Auto slide effect
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+//     }, 7000);
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   return (
+//     <div className="home-container">
+//       <section className="hero-section">
+//         <div className="hero-slider">
+//           {heroSlides.map((slide, index) => (
+//             <div 
+//               key={index} 
+//               className={`slide ${index === currentSlide ? 'active' : ''}`}
+//               style={{ backgroundImage: `url(${slide.image})` }}
+//             >
+//               <div className="slide-content">
+//                 <h1>{slide.title}</h1>
+//                 <p>{slide.subtitle}</p>
+//                 {index === 0 && (
+//                   <div className="hero-actions">
+//                     <a 
+//                       href="https://docs.google.com/forms/d/e/1FAIpQLSdrYYf-KpGe4BOZ3RmpxM0FxDZUr4-Mv-auSTbT2ybMbrIMHw/viewform?usp=sharing" 
+//                       target="_blank" 
+//                       rel="noopener noreferrer"
+//                       className="hero-button registration-button"
+//                     >
+//                       Register for Placements
+//                     </a>
+//                   </div>
+//                 )}
+//               </div>
+//             </div>
+//           ))}
+//           <div className="slider-dots">
+//             {heroSlides.map((_, index) => (
+//               <span 
+//                 key={index} 
+//                 className={`dot ${index === currentSlide ? 'active' : ''}`}
+//                 onClick={() => setCurrentSlide(index)}
+//               />
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="about-section">
+//         <div className="section-container">
+//           <h2 className="section-title">About Placement Cell</h2>
+//           <div className="about-content">
+//             <div className="about-text">
+//               <p>Welcome to the Placement Cell of Punjabi University, Patiala, dedicated to bridging the gap between students and career opportunities. Our mission is to ensure the best placements and professional growth for our students by connecting them with top recruiters and industry leaders.</p>
+//               <Link to="/about" className="learn-more">Learn More →</Link>
+//             </div>
+//             <div className="about-stats">
+//               <div className="stat-item">
+//                 <h3>95%</h3>
+//                 <p>Placement Rate</p>
+//               </div>
+//               <div className="stat-item">
+//                 <h3>100+</h3>
+//                 <p>Companies</p>
+//               </div>
+//               <div className="stat-item">
+//                 <h3>42 LPA</h3>
+//                 <p>Highest Package</p>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="stats-section">
+//         <div className="section-container">
+//           <div className="stats-grid">
+//             <div className="stat-card">
+//               <i className="fas fa-user-graduate"></i>
+//               <h3>1200+</h3>
+//               <p>Students Placed</p>
+//             </div>
+//             <div className="stat-card">
+//               <i className="fas fa-building"></i>
+//               <h3>250+</h3>
+//               <p>Partner Companies</p>
+//             </div>
+//             <div className="stat-card">
+//               <i className="fas fa-chart-line"></i>
+//               <h3>12 LPA</h3>
+//               <p>Average Package</p>
+//             </div>
+//             <div className="stat-card">
+//               <i className="fas fa-handshake"></i>
+//               <h3>98%</h3>
+//               <p>Success Rate</p>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="recruiters-section">
+//         <div className="section-container">
+//           <h2 className="section-title">Top Recruiters</h2>
+//           <div className="recruiters-scroll">
+//             <div className="recruiter-logos">
+//               <img src="../images/company1.jpg" alt="Company 1" />
+//               <img src="../images/company2.png" alt="Company 2" />
+//               <img src="../images/company3.png" alt="Company 3" />
+//               <img src="../images/company4.png" alt="Company 4" />
+//               <img src="../images/company5.png" alt="Company 5" />
+//               <img src="../images/company6.jpg" alt="Company 6" />
+//               <img src="../images/company7.png" alt="Company 7" />
+//               <img src="../images/company8.png" alt="Company 8" />
+//               <img src="../images/company9.png" alt="Company 9" />
+//               <img src="../images/company10.png" alt="Company 10" />
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="resources-section">
+//         <div className="section-container">
+//           <h2 className="section-title">Placement Resources</h2>
+//           <div className="resources-grid">
+//             <div className="resource-card">
+//               <i className="fas fa-book"></i>
+//               <h3>Interview Preparation</h3>
+//               <p>Access study materials and guides</p>
+//               <Link to="/resources" className="resource-link">View Resources</Link>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       <section className="contact-section">
+//         <div className="section-container">
+//           <h2 className="section-title">Contact Placement Cell</h2>
+//           <div className="contact-grid">
+//             <div className="contact-info">
+//               <div className="contact-item">
+//                 <i className="fas fa-envelope"></i>
+//                 <p>placement@pbi.ac.in</p>
+//               </div>
+//               <div className="contact-item">
+//                 <i className="fas fa-phone"></i>
+//                 <p>+91 XXX XXX XXXX</p>
+//               </div>
+//               <div className="contact-item">
+//                 <i className="fas fa-map-marker-alt"></i>
+//                 <p>Career and Counselling cum Placement Cell,<br/> Ground Floor, <br/>Engineering Block, <br/>Punjabi University, Patiala (Punjab) 147002
+//                 </p>
+//               </div>
+//             </div>
+//             <div className="contact-form">
+//               <form>
+//                 <input type="text" placeholder="Your Name" />
+//                 <input type="email" placeholder="Your Email" />
+//                 <textarea placeholder="Your Message"></textarea>
+//                 <button type="submit" className="submit-btn">Send Message</button>
+//               </form>
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default Home;
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +216,6 @@ function Home() {
     }
   ];
 
-  // Auto slide effect
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -30,64 +223,119 @@ function Home() {
     return () => clearInterval(timer);
   }, []);
 
+  const styles = {
+    homeContainer: { fontFamily: 'Arial, sans-serif', marginTop: '0px' },
+    heroSection: { position: 'relative', height: '90vh', overflow: 'hidden' },
+    slide: (image, active) => ({
+      backgroundImage: `url(${image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '100%',
+      width: '100%',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      opacity: active ? 1 : 0,
+      transition: 'opacity 1s ease-in-out',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: '#fff',
+      textShadow: '0 2px 8px rgba(0,0,0,0.7)',
+      zIndex: active ? 1 : 0,
+    }),
+    heroButton: {
+      marginTop: '20px',
+      padding: '10px 20px',
+      backgroundColor: '#0056b3',
+      color: 'white',
+      textDecoration: 'none',
+      borderRadius: '5px',
+      fontWeight: 'bold',
+    },
+    sliderDots: {
+      position: 'absolute',
+      bottom: '20px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      display: 'flex',
+      gap: '10px',
+    },
+    dot: (active) => ({
+      height: '10px',
+      width: '10px',
+      borderRadius: '50%',
+      backgroundColor: active ? 'white' : 'gray',
+      cursor: 'pointer',
+    }),
+    sectionContainer: { padding: '60px 20px', maxWidth: '1200px', margin: '0 auto' },
+    sectionTitle: { textAlign: 'center', fontSize: '2.5rem', marginBottom: '40px', color: '#333' },
+    aboutContent: { display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' },
+    aboutText: { flex: '1', minWidth: '300px', paddingRight: '20px' },
+    aboutStats: { flex: '1', minWidth: '300px', display: 'flex', justifyContent: 'space-around' },
+    statItem: { textAlign: 'center' },
+    statsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' },
+    statCard: { textAlign: 'center', backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '10px', boxShadow: '0 0 10px rgba(0,0,0,0.1)' },
+    recruitersScroll: { overflowX: 'auto', whiteSpace: 'nowrap', paddingBottom: '20px' },
+    recruiterLogos: { display: 'inline-flex', gap: '20px', alignItems: 'center' },
+    recruiterImage: { height: '80px', objectFit: 'contain' },
+    resourcesGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' },
+    resourceCard: { textAlign: 'center', backgroundColor: '#e6f7ff', padding: '20px', borderRadius: '10px', boxShadow: '0 0 8px rgba(0,0,0,0.1)' },
+    contactGrid: { display: 'flex', flexWrap: 'wrap', gap: '30px' },
+    contactInfo: { flex: '1', minWidth: '300px' },
+    contactForm: { flex: '1', minWidth: '300px' },
+    input: { width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' },
+    textarea: { width: '100%', padding: '10px', height: '100px', marginBottom: '10px', borderRadius: '5px', border: '1px solid #ccc' },
+    submitBtn: { backgroundColor: '#28a745', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer' }
+  };
+
   return (
-    <div className="home-container">
-      <section className="hero-section">
-        <div className="hero-slider">
-          {heroSlides.map((slide, index) => (
-            <div 
-              key={index} 
-              className={`slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="slide-content">
-                <h1>{slide.title}</h1>
-                <p>{slide.subtitle}</p>
-                {index === 0 && (
-                  <div className="hero-actions">
-                    <a 
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSdrYYf-KpGe4BOZ3RmpxM0FxDZUr4-Mv-auSTbT2ybMbrIMHw/viewform?usp=sharing" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="hero-button registration-button"
-                    >
-                      Register for Placements
-                    </a>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-          <div className="slider-dots">
-            {heroSlides.map((_, index) => (
-              <span 
-                key={index} 
-                className={`dot ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => setCurrentSlide(index)}
-              />
-            ))}
+    <div style={styles.homeContainer}>
+      {/* Hero Section */}
+      <section style={styles.heroSection}>
+        {heroSlides.map((slide, index) => (
+          <div key={index} style={styles.slide(slide.image, index === currentSlide)}>
+            <h1>{slide.title}</h1>
+            <p>{slide.subtitle}</p>
+            {index === 0 && (
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdrYYf-KpGe4BOZ3RmpxM0FxDZUr4-Mv-auSTbT2ybMbrIMHw/viewform?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={styles.heroButton}
+              >
+                Register for Placements
+              </a>
+            )}
           </div>
+        ))}
+        <div style={styles.sliderDots}>
+          {heroSlides.map((_, index) => (
+            <span key={index} style={styles.dot(index === currentSlide)} onClick={() => setCurrentSlide(index)}></span>
+          ))}
         </div>
       </section>
 
-      <section className="about-section">
-        <div className="section-container">
-          <h2 className="section-title">About Placement Cell</h2>
-          <div className="about-content">
-            <div className="about-text">
-              <p>Welcome to the Placement Cell of Punjabi University, Patiala, dedicated to bridging the gap between students and career opportunities. Our mission is to ensure the best placements and professional growth for our students by connecting them with top recruiters and industry leaders.</p>
-              <Link to="/about" className="learn-more">Learn More →</Link>
+      {/* About Section */}
+      <section>
+        <div style={styles.sectionContainer}>
+          <h2 style={styles.sectionTitle}>About Placement Cell</h2>
+          <div style={styles.aboutContent}>
+            <div style={styles.aboutText}>
+              <p>Welcome to the Placement Cell of Punjabi University, Patiala, dedicated to bridging the gap between students and career opportunities.</p>
+              <Link to="/about">Learn More →</Link>
             </div>
-            <div className="about-stats">
-              <div className="stat-item">
+            <div style={styles.aboutStats}>
+              <div style={styles.statItem}>
                 <h3>95%</h3>
                 <p>Placement Rate</p>
               </div>
-              <div className="stat-item">
+              <div style={styles.statItem}>
                 <h3>100+</h3>
                 <p>Companies</p>
               </div>
-              <div className="stat-item">
+              <div style={styles.statItem}>
                 <h3>42 LPA</h3>
                 <p>Highest Package</p>
               </div>
@@ -96,26 +344,23 @@ function Home() {
         </div>
       </section>
 
-      <section className="stats-section">
-        <div className="section-container">
-          <div className="stats-grid">
-            <div className="stat-card">
-              <i className="fas fa-user-graduate"></i>
+      {/* Stats Section */}
+      <section>
+        <div style={styles.sectionContainer}>
+          <div style={styles.statsGrid}>
+            <div style={styles.statCard}>
               <h3>1200+</h3>
               <p>Students Placed</p>
             </div>
-            <div className="stat-card">
-              <i className="fas fa-building"></i>
+            <div style={styles.statCard}>
               <h3>250+</h3>
               <p>Partner Companies</p>
             </div>
-            <div className="stat-card">
-              <i className="fas fa-chart-line"></i>
+            <div style={styles.statCard}>
               <h3>12 LPA</h3>
               <p>Average Package</p>
             </div>
-            <div className="stat-card">
-              <i className="fas fa-handshake"></i>
+            <div style={styles.statCard}>
               <h3>98%</h3>
               <p>Success Rate</p>
             </div>
@@ -123,65 +368,55 @@ function Home() {
         </div>
       </section>
 
-      <section className="recruiters-section">
-        <div className="section-container">
-          <h2 className="section-title">Top Recruiters</h2>
-          <div className="recruiters-scroll">
-            <div className="recruiter-logos">
-              <img src="../images/company1.jpg" alt="Company 1" />
-              <img src="../images/company2.png" alt="Company 2" />
-              <img src="../images/company3.png" alt="Company 3" />
-              <img src="../images/company4.png" alt="Company 4" />
-              <img src="../images/company5.png" alt="Company 5" />
-              <img src="../images/company6.jpg" alt="Company 6" />
-              <img src="../images/company7.png" alt="Company 7" />
-              <img src="../images/company8.png" alt="Company 8" />
-              <img src="../images/company9.png" alt="Company 9" />
-              <img src="../images/company10.png" alt="Company 10" />
+      {/* Recruiters Section */}
+      <section>
+        <div style={styles.sectionContainer}>
+          <h2 style={styles.sectionTitle}>Top Recruiters</h2>
+          <div style={styles.recruitersScroll}>
+            <div style={styles.recruiterLogos}>
+              {Array.from({ length: 10 }).map((_, index) => (
+                <img
+                  key={index}
+                  src={`../images/company${index + 1}.${index === 0 || index === 5 ? 'jpg' : 'png'}`}
+                  alt={`Company ${index + 1}`}
+                  style={styles.recruiterImage}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="resources-section">
-        <div className="section-container">
-          <h2 className="section-title">Placement Resources</h2>
-          <div className="resources-grid">
-            <div className="resource-card">
-              <i className="fas fa-book"></i>
+      {/* Resources Section */}
+      <section>
+        <div style={styles.sectionContainer}>
+          <h2 style={styles.sectionTitle}>Placement Resources</h2>
+          <div style={styles.resourcesGrid}>
+            <div style={styles.resourceCard}>
               <h3>Interview Preparation</h3>
               <p>Access study materials and guides</p>
-              <Link to="/resources" className="resource-link">View Resources</Link>
+              <Link to="/resources">View Resources</Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="contact-section">
-        <div className="section-container">
-          <h2 className="section-title">Contact Placement Cell</h2>
-          <div className="contact-grid">
-            <div className="contact-info">
-              <div className="contact-item">
-                <i className="fas fa-envelope"></i>
-                <p>placement@pbi.ac.in</p>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-phone"></i>
-                <p>+91 XXX XXX XXXX</p>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-map-marker-alt"></i>
-                <p>Career and Counselling cum Placement Cell,<br/> Ground Floor, <br/>Engineering Block, <br/>Punjabi University, Patiala (Punjab) 147002
-                </p>
-              </div>
+      {/* Contact Section */}
+      <section>
+        <div style={styles.sectionContainer}>
+          <h2 style={styles.sectionTitle}>Contact Placement Cell</h2>
+          <div style={styles.contactGrid}>
+            <div style={styles.contactInfo}>
+              <p><b>Email:</b> placement@pbi.ac.in</p>
+              <p><b>Phone:</b> +91 XXX XXX XXXX</p>
+              <p><b>Address:</b> Career and Counselling cum Placement Cell,<br />Punjabi University, Patiala (Punjab)</p>
             </div>
-            <div className="contact-form">
+            <div style={styles.contactForm}>
               <form>
-                <input type="text" placeholder="Your Name" />
-                <input type="email" placeholder="Your Email" />
-                <textarea placeholder="Your Message"></textarea>
-                <button type="submit" className="submit-btn">Send Message</button>
+                <input type="text" placeholder="Your Name" style={styles.input} />
+                <input type="email" placeholder="Your Email" style={styles.input} />
+                <textarea placeholder="Your Message" style={styles.textarea}></textarea>
+                <button type="submit" style={styles.submitBtn}>Send Message</button>
               </form>
             </div>
           </div>

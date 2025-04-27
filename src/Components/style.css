@@ -89,7 +89,7 @@ body {
 }
 
 .logo {
-    height: 80px; /* Increased logo size */
+    height: 60px; /* Increased logo size */
     width: auto;
     transition: transform 0.3s ease;
 }
@@ -106,11 +106,11 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.8rem;
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 1;
 }
 
 .nav-links li {
