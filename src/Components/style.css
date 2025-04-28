@@ -5,6 +5,116 @@
     box-sizing: border-box;
 }
 
+/* CSE Team Page Styles */
+.cse-team-container {
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+    text-align: center;
+}
+.cse-team-heading {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #0047AB;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+}
+.cse-team-intro {
+    font-size: 1.18rem;
+    color: #333;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+.cse-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    justify-items: center;
+}
+.cse-team-card {
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 6px 24px rgba(0, 71, 171, 0.13);
+    padding: 38px 26px 26px 26px;
+    max-width: 340px;
+    transition: transform 0.18s, box-shadow 0.18s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.cse-team-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 32px rgba(0, 71, 171, 0.18);
+}
+.cse-team-photo {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #1E90FF;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0, 71, 171, 0.08);
+}
+.cse-team-info h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #0047AB;
+    margin-bottom: 5px;
+}
+.cse-team-role {
+    font-size: 1.02rem;
+    color: #1E90FF;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+.cse-team-email {
+    display: block;
+    color: #333;
+    font-size: 0.98rem;
+    margin-bottom: 9px;
+    text-decoration: none;
+    transition: color 0.2s;
+    word-break: break-all;
+}
+.cse-team-email:hover {
+    color: #0047AB;
+    text-decoration: underline;
+}
+.cse-team-linkedin {
+    display: inline-block;
+    margin-top: 5px;
+    transition: transform 0.2s;
+}
+.cse-team-linkedin:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+@media (max-width: 900px) {
+    .cse-team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+    }
+    .cse-team-container {
+        padding: 0 10px;
+    }
+}
+@media (max-width: 600px) {
+    .cse-team-heading {
+        font-size: 1.6rem;
+    }
+    .cse-team-card {
+        padding: 28px 6vw 18px 6vw;
+    }
+    .cse-team-photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
 /* Global Styles */
 :root {
     --primary-color: #0047AB;

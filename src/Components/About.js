@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Cards from './Cards'; // Assuming you have a Cards component
 import Achievements from './Achievements';
+import Register from './Register';
 // Example Data
 const stats = [
   { label: "Students Placed", value: 1500 },
@@ -59,7 +60,12 @@ const AboutPage = () => {
             marginTop: '1rem',
           }}
         >
-          Register Now
+          <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdrYYf-KpGe4BOZ3RmpxM0FxDZUr4-Mv-auSTbT2ybMbrIMHw/viewform?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer">
+          Register Now 
+          </a>
         </button>
       </motion.div>
           <Cards/>

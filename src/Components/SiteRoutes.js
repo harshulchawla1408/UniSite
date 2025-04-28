@@ -4,6 +4,7 @@ import Home from "./Home";
 import Login from "./Login";
 import About from "./About";
 import Resources from "./Resources";
+import AboutTeam from "./AboutTeam";
 import Admin from "./Admin";
 import ExcelFilterForm from "./ExcelFilterForm";
 import { useContext } from "react";
@@ -22,6 +23,7 @@ function SiteRoutes() {
             <Route path="/admin" element={isAdmin ? <Admin/> : <Navigate to="/home" replace />} />
             <Route path="/filter" element={isAdmin ? <ExcelFilterForm /> : <Navigate to="/home" replace />} />
             {(!isAdmin) && <Route path="/resources" element={<Resources/>}/>} 
+            <Route path="/cseteam" element={<AboutTeam/>}/>
         </Routes></>
     )
 }

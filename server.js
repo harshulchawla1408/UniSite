@@ -25,7 +25,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/unisitedb')
 
 
 // --- StudentLogin Model ---
-const StudentLogin = require('./StudentLogin');
+const StudentLogin = require('./src/Components/StudentLogin');
 
 // Generate JWT Token
 const generateToken = (user) => jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1h' });
