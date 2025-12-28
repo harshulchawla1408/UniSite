@@ -90,7 +90,7 @@ unisite/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/BhavyaSharma17/Placement-Cell.git
+   git clone https://github.com/harshulchawla1408/UniSite.git
    cd unisite
    ```
 
@@ -195,4 +195,4 @@ For major changes, please open an issue first to discuss what you would like to 
 This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 
-Made with ❤️ by [Bhavya Sharma](https://github.com/BhavyaSharma17)
+Made with ❤️ by [Harshul Chawla](https://github.com/harshulchawla1408)
